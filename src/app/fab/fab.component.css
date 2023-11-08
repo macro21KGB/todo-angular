@@ -1,14 +1,30 @@
 .fab {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   position: fixed;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
   border: none;
+  border-radius: 10px;
   background-color: rgb(104, 104, 255);
   color: white;
   bottom: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   right: 1rem;
+}
+
+.fab:hover {
+  background-color: rgb(104, 104, 255);
+  color: white;
+  cursor: pointer;
+}
+
+.fab:focus {
+  outline: none;
+}
+
+.fab:active {
+  background-color: rgb(104, 104, 255);
+  color: white;
 }

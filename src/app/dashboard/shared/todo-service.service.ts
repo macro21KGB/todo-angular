@@ -129,7 +129,6 @@ export class TodoService {
   ]
 
   addTodo(todo: Todo) {
-    console.log(todo);
     this.todos.push(todo);
   }
 

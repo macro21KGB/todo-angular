@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   template: `
+  @if (this.todoForm.invalid) {
+    <div class="error-message">Please fill all the fields</div>
+  }
   <form (ngSubmit)="handleSubmit()" [formGroup]="todoForm">
     <input type="text" formControlName="title" placeholder="Title" />
     <input formControlName="description" type="text" placeholder="Description" />
@@ -26,10 +29,14 @@ export class AddTodoComponent {
 
   #generateNumericId() {
     return Math.floor(Math.random() * 1000000);
-
   }
 
   handleSubmit() {
+
+    if (this.todoForm.invalid) {
+      return;
+    }
+
     const newTodo: Todo = {
       id: this.#generateNumericId(),
       title: this.todoForm.value.title!,
