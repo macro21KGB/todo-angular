@@ -1,0 +1,14 @@
+.fab {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(104, 104, 255);
+  color: white;
+  bottom: 1rem;
+  font-size: 2rem;
+  right: 1rem;
+}

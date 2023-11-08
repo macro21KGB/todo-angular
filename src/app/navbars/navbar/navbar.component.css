@@ -1,0 +1,23 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  padding: 0 0.5rem;
+
+}
+
+div {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  all: unset;
+  --p-color: rgb(104, 104, 255);
+  border: 1px solid rgba(var(--p-color), 0.1);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: var(--p-color);
+
+}
