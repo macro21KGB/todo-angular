@@ -129,7 +129,7 @@ export class TodoService {
   ]
 
   addTodo(todo: Todo) {
-    this.todos.push(todo);
+    this.todos.unshift(todo);
   }
 
   getTodos() {

@@ -10,19 +10,36 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   imports: [CommonModule],
   animations: [
     trigger('animation', [
-      state('void', style({ opacity: 0 })),
+      state('not-selectd', style({
+        opacity: 1,
+
+      })),
+
+      state('selected', style({
+        backgroundColor: 'green',
+        color: 'white',
+        opacity: 1,
+      })),
+
       transition(':enter', [
-        style({ opacity: 0 }),
-        animate(500, style({ opacity: 1 }))
+        animate('0.5s ease-in-out')
       ]),
+
       transition(':leave', [
-        style({ opacity: 1 }),
-        animate(500, style({ opacity: 0 }))
+        animate('0.5s ease-in-out')
+      ]),
+
+      transition('not-selected => selected', [
+        animate('0.2s ease-in-out')
+      ]),
+
+      transition('selected => not-selected', [
+        animate('0.2s ease-in-out')
       ])
     ])
   ],
   template: `
-  <div @animation class="todo">
+  <div [@animation]="this.todo.status ? 'selected' : 'not-selected'" [ngClass]="{'selected': this.todo.status}" class='todo'>
     <div>
       <p class="title"> {{ todo.title }} </p>
       <p class="description"> {{ todo.description }} </p>

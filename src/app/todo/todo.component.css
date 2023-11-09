@@ -20,3 +20,12 @@
   margin: 0;
   color: rgb(71, 71, 71);
 }
+
+.selected {
+  background-color: rgb(169, 250, 169);
+  text-decoration: line-through;
+}
+
+.selected .description {
+  color: rgb(226, 226, 226);
+}
